@@ -10,22 +10,23 @@ def pascal_triangle(n):
        . Returns an empty list if n <= 0
        . assume n will be always an integer
     """
-    Pascal = []
+    pascal_tri = []
 
     if n <= 0:
         return []
 
-    for x in range(n):
-        if (x == 0):
-            Pascal.append([1])
+    for i in range(n):
+        if (i == 0):
+            pascal_tri.append([1])
         else:
-            Current_row = []
-            for y in range(x + 1):
-                if (y == 0 or y == x):
-                    Current_row.append(1)
+            cur_row = []
+            for j in range(i + 1):
+                if (j == 0 or j == i):
+                    cur_row.append(1)
                 else:
-                    Current_row.append(Pascal[x - 1][y - 1] + Pascal[y - 1][y])
+                    cur_row.append(pascal_tri[i - 1][j - 1] +
+                                   pascal_tri[i - 1][j])
 
-            Pascal.append(Current_row)
+            pascal_tri.append(cur_row)
 
-    return (Pascal)
+    return (pascal_tri)
