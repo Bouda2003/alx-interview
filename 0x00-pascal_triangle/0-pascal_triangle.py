@@ -24,8 +24,7 @@ def pascal_triangle(n):
                 if (y == 0 or y == x):
                     Current_row.append(1)
                 else:
-                    Current_row.append(Pascal[x - 1][y - 1] +
-                                   Pascal[y - 1][y])
+                    Current_row.append(Pascal[x - 1][y - 1] + Pascal[y - 1][y])
 
             Pascal.append(Current_row)
 
